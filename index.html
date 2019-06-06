@@ -1,0 +1,107 @@
+<!-- Farm Collector -->
+
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Farm Collector</title>
+
+    <!-- CSS reset link -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+
+    <!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <!-- Bootstrap File -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- style link -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+
+
+
+</head>
+
+<body>
+
+    <div class="jumbotron">
+        <h1 class="text-center">Welcome to the Farm</h1>
+        <h3 class="text-center">Click an animal to start</h3>
+    </div>
+
+    <!-- Creates the Overall Grid -->
+    <div class="container">
+
+        <!-- first row -->
+        <div class="row">
+
+            <!-- column one -->
+            <div class="col-5">
+                <div class="card">
+                    <h3 class="card-header">Animals</h3>
+
+                    <div class="card-body">
+                    
+                        <button id="buttonOne" class="btn btn-outline-light" >
+                            <img src="./assets/images/chicken.jpg" width="50" />
+                        </button>
+                        
+                        <button id="buttonTwo" class="btn btn-outline-light" >
+                            <img src="./assets/images/sheep2.png" width="70" />
+                        </button>
+                       
+                        <button id="buttonThree" class="btn btn-outline-light" >
+                            <img src="./assets/images/cow2.png" width="80" />
+                        </button>
+                       
+                        <button id="buttonFour" class="btn btn-outline-light" >
+                            <img src="./assets/images/goat.jpg" width="50" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- column two -->
+            <div class="col-3">
+                <div class="card">
+                    <h3 class="card-header">Target Number</h3>
+                    <div class="card-body"></div>
+                    <h2 id="randomNum"></h2>
+                </div>
+            </div>
+            
+            <!-- column three -->
+            <div class="col-3">
+                <div class="card">
+                    <h3 class="card-header">User Total</h3>
+                    <div class="card-body"></div>
+                    <h2 id="totalScore"></h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- second row -->
+        <div class="row">
+            <div class="col-5">
+                <div class="card">
+                    <h3 class="card-header">Game Info</h3>
+                    <div class="card-body"></div>
+                    <p>Wins : </p><h2 id="wins"></h1>
+                    <p>Losses : </p><h2 id="losses"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script: JavaScript -->
+    <script type="text/javascript" src="./assets/javascript/game.js">
+
+    </script>
+
+</body>
+
+</html>
