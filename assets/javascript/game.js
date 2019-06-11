@@ -20,10 +20,6 @@
 // TODO: compare sum of farm animal value to random number target 
 // TODO: update wins/losses, clear random values, and generate new random values
 
-
-
-//TODO: random number generator
-
 $(document).ready(function () {
 
     //Global Variables
@@ -35,8 +31,11 @@ $(document).ready(function () {
     var wins = 0;
     var losses = 0;
     var totalScore = 0;
+    var cLog;
+    var reset;
 
-    resetNumbers();
+    // addWins();
+    // addLosses();
 
     // Generate a random number between 19-120
     // Generate a random number (ranOne, ranTwo, ranThree, ranFour) between 1-12
@@ -51,26 +50,113 @@ $(document).ready(function () {
         ranTwo = randomIntFromInterval(1, 12);
         ranThree = randomIntFromInterval(1, 12);
         ranFour = randomIntFromInterval(1, 12);
+        totalScore = 0;
     };
 
-    console.log(randomNum);
-    console.log(ranOne);
-    console.log(ranTwo);
-    console.log(ranThree);
-    console.log(ranFour);
-    
-    $('#randomNum').text(randomNum);
+    // call random numbers
+    resetNumbers();
 
-    $("#buttonOne").on("click", function() {
-        totalScore = ranOne;
+    // Console log function for random numbers
+    function cLog() {
+        console.log(randomNum);
+        console.log(ranOne);
+        console.log(ranTwo);
+        console.log(ranThree);
+        console.log(ranFour);
+    }
+    cLog();
+
+    // win function
+    function addWins() {
+        wins += 1;
+        console.log(wins);
+        $('#wins').text(wins);
+        $('#totalScore').empty();
+        resetNumbers();
+        $('#randomNum').text(randomNum);
+        cLog();
+    }
+
+    // loss function
+    function addLosses() {
+        losses += 1;
+        console.log(losses);
+        $('#losses').text(losses);
+        $('#totalScore').empty();
+        resetNumbers();
+        $('#randomNum').text(randomNum);
+        cLog();
+    }
+
+    // Empty 
+    $('#totalScore').empty();
+    $('#wins').empty();
+    $('#losses').empty();
+
+
+    // Writes randomNub to html page
+    $('#randomNum').text(randomNum);
+    $('#wins').text(wins);
+    $('#losses').text(losses);
+
+    // Chicken Button 
+    $("#buttonOne").on("click", function () {
+        $('#buttonOne').val(ranOne);
+        totalScore += ranOne;
         $('#totalScore').text(totalScore);
+
+        if (totalScore === randomNum) {
+            addWins();
+        }
+
+        else if (totalScore > randomNum) {
+            addLosses();
+        }
     });
 
-    
+    // Sheep Button
+    $("#buttonTwo").on("click", function () {
+        $('#buttonTwo').val(ranTwo);
+        totalScore += ranTwo;
+        $('#totalScore').text(totalScore);
 
-        
+        if (totalScore === randomNum) {
+            addWins();
+        }
 
+        else if (totalScore > randomNum) {
+            addLosses();
+        }
+    });
 
-    
+    // Cow Button
+    $("#buttonThree").on("click", function () {
+        $('#buttonThree').val(ranThree);
+        totalScore += ranThree;
+        $('#totalScore').text(totalScore);
+
+        if (totalScore === randomNum) {
+            addWins();
+        }
+
+        else if (totalScore > randomNum) {
+            addLosses();
+        }
+    });
+
+    // Goat Button
+    $("#buttonFour").on("click", function () {
+        $('#buttonFour').val(ranFour);
+        totalScore += ranFour;
+        $('#totalScore').text(totalScore);
+
+        if (totalScore === randomNum) {
+            addWins();
+        }
+
+        else if (totalScore > randomNum) {
+            addLosses();
+        }
+    });
 
 });

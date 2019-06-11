@@ -1,1 +1,17 @@
+.row {
+    margin: 20px;
+    
+}
+
+body {
+    /* background-color: gray; */
+    background-image: url(../images/background-carpentry-construction-326333.jpg);
+    
+}
+
+.jumbotron {
+    background-color: #00263b;
+    color: #d14330;
+
+}
 
